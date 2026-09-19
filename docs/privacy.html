@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chính sách quyền riêng tư — TNClubManagement Save Form</title>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; max-width: 760px; margin: 40px auto; padding: 0 16px; line-height: 1.6; color: #1f2933; }
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.15rem; margin-top: 2rem; }
+    table { border-collapse: collapse; width: 100%; margin-top: 0.5rem; }
+    th, td { border: 1px solid #d1d5db; padding: 8px 10px; text-align: left; font-size: 0.95rem; }
+    th { background: #f3f4f6; }
+    code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Chính sách quyền riêng tư — TNClubManagement Save Form</h1>
+  <p><em>Cập nhật lần cuối: 2026-09-19</em></p>
+
+  <h2>Tóm tắt</h2>
+  <p>
+    TNClubManagement Save Form (&quot;Extension&quot;) là tiện ích Chrome giúp tự động
+    lưu và khôi phục dữ liệu bạn đã nhập vào các form trên những trang web mà
+    <strong>chính bạn</strong> cho phép. Extension <strong>không thu thập,
+    không gửi, không bán</strong> bất kỳ dữ liệu nào của bạn cho bên thứ ba, và
+    <strong>không có máy chủ (server) riêng nào</strong>.
+  </p>
+
+  <h2>Dữ liệu nào được xử lý?</h2>
+  <p>
+    Extension đọc dữ liệu bạn nhập trong các trường form (input, textarea,
+    select, các nút lựa chọn dạng &quot;chip&quot;...) trên các trang web nằm
+    trong danh sách domain do bạn tự thêm ở trang Options.
+  </p>
+
+  <h2>Dữ liệu được lưu ở đâu?</h2>
+  <p>
+    Toàn bộ dữ liệu (bản nháp tự động lưu, các &quot;phiên bản có tên&quot; do
+    bạn chủ động lưu, danh sách domain được phép, cấu hình thời gian giữ bản
+    nháp) chỉ được lưu <strong>cục bộ trên trình duyệt của bạn</strong> thông
+    qua API <code>chrome.storage.local</code> của Chrome. Dữ liệu:
+  </p>
+  <ul>
+    <li>Không được đồng bộ lên tài khoản Google (không dùng <code>chrome.storage.sync</code>).</li>
+    <li>Không được gửi tới bất kỳ máy chủ, API, hay dịch vụ phân tích (analytics) nào của nhà phát triển hay bên thứ ba.</li>
+    <li>Chỉ có thể truy cập được bởi chính Extension, trên chính trình duyệt bạn đã cài đặt.</li>
+  </ul>
+
+  <h2>Quyền truy cập website (host permissions)</h2>
+  <p>
+    Extension <strong>không</strong> yêu cầu quyền truy cập bất kỳ trang web
+    nào theo mặc định. Quyền truy cập một domain cụ thể chỉ được xin (qua hộp
+    thoại xin quyền chuẩn của Chrome — <code>chrome.permissions.request</code>)
+    khi <strong>bạn chủ động thêm domain đó</strong> vào danh sách cho phép ở
+    trang Options. Bạn có thể thu hồi quyền này bất cứ lúc nào bằng cách xoá
+    domain khỏi danh sách.
+  </p>
+
+  <h2>Các quyền khác mà Extension sử dụng</h2>
+  <table>
+    <tr><th>Quyền</th><th>Mục đích</th></tr>
+    <tr><td><code>storage</code></td><td>Lưu bản nháp, phiên bản đã lưu, danh sách domain và cài đặt — toàn bộ ở local.</td></tr>
+    <tr><td><code>scripting</code></td><td>Chèn content script vào đúng các domain bạn đã cho phép để đọc/điền dữ liệu form.</td></tr>
+    <tr><td><code>activeTab</code></td><td>Cho phép trang Side Panel thao tác với tab hiện tại khi bạn chủ động mở nó.</td></tr>
+    <tr><td><code>alarms</code></td><td>Lên lịch dọn định kỳ các bản nháp tự động lưu đã quá hạn giữ.</td></tr>
+    <tr><td><code>sidePanel</code></td><td>Hiển thị giao diện quản lý (xem/lưu/khôi phục/xoá) trong Side Panel của Chrome.</td></tr>
+  </table>
+
+  <h2>Xoá dữ liệu</h2>
+  <p>
+    Bạn có thể xoá dữ liệu đã lưu bất kỳ lúc nào từ giao diện Side Panel (xoá
+    từng bản nháp/phiên bản), hoặc gỡ cài đặt Extension để xoá toàn bộ dữ liệu
+    mà <code>chrome.storage.local</code> đang giữ.
+  </p>
+
+  <h2>Liên hệ</h2>
+  <p>
+    Nếu có câu hỏi về chính sách quyền riêng tư này, vui lòng liên hệ:
+    <code>&lt;điền email hỗ trợ của bạn tại đây&gt;</code>.
+  </p>
+</body>
+</html>

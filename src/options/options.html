@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title data-i18n="options.pageTitle">TNClubManagement Save Form - Cài đặt</title>
+    <link rel="stylesheet" href="./options.css" />
+  </head>
+  <body>
+    <main class="options">
+      <header class="options-header">
+        <img src="/public/icons/icon48.png" alt="" width="28" height="28" />
+        <div>
+          <h1>TNClubManagement Save Form</h1>
+          <p class="subtitle" data-i18n="options.subtitle">Cài đặt chung</p>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2 data-i18n="options.domains.title">Domain được phép theo dõi form</h2>
+        <p class="card-desc" data-i18n="options.domains.desc">SaveForm chỉ hoạt động trên các domain bạn thêm vào danh sách này. Bạn sẽ được Chrome hỏi cấp quyền truy cập khi thêm domain mới.</p>
+        <form id="add-host-form" class="add-host-form">
+          <input id="host-input" type="text" data-i18n-placeholder="options.domains.placeholder" placeholder="Ví dụ: example.com hoặc localhost:9443" required />
+          <button type="submit" class="btn btn-primary" data-i18n="options.add">Thêm</button>
+        </form>
+        <p id="host-error" class="error"></p>
+        <ul id="host-list" class="host-list"></ul>
+      </section>
+
+      <section class="card">
+        <h2 data-i18n="options.retention.title">Thời gian lưu trữ</h2>
+        <p class="card-desc" data-i18n="options.retention.desc">Bản nháp tự động sẽ bị xóa sau số ngày dưới đây (không áp dụng cho các phiên bản bạn đã đặt tên).</p>
+        <label class="retention-label">
+          <span data-i18n="options.retention.prefix">Xóa bản nháp sau</span>
+          <input id="retention-input" type="number" min="1" max="365" />
+          <span data-i18n="options.retention.unit">ngày</span>
+        </label>
+      </section>
+
+      <section class="card">
+        <h2 data-i18n="options.language.title">Ngôn ngữ hiển thị</h2>
+        <p class="card-desc" data-i18n="options.language.desc">Áp dụng cho Side Panel, trang Cài đặt và banner khôi phục trên trang web.</p>
+        <select id="language-select" class="select-input">
+          <option value="vi">Tiếng Việt</option>
+          <option value="en">English</option>
+        </select>
+      </section>
+    </main>
+    <script type="module" src="./options.ts"></script>
+  </body>
+</html>
