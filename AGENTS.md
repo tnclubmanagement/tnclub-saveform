@@ -46,6 +46,11 @@ domain nguoi dung cho phep. Stack: TypeScript + Vite + `@crxjs/vite-plugin`.
   VI/EN, toggle o goc phai tren), dung lam Privacy Policy URL khi submit len
   Chrome Web Store. Bat GitHub Pages (Settings > Pages > Deploy from branch >
   `main` > thu muc `/docs`) de co URL cong khai, khong can workflow rieng.
+- `docs/store-assets/` - hinh anh dung khi submit len Chrome Web Store:
+  `promo-tile-440x280.png` (Small promo tile, co file `.svg` nguon di kem de
+  chinh sua). Icon Store (128x128) dung lai `public/icons/icon128.png`. Con
+  thieu: Screenshot (1280x800 hoac 640x400) - phai la anh chup THAT extension
+  dang chay, khong the tu tao, ban tu chup roi bo sung khi submit.
 - `.github/workflows/ci.yml` - build + typecheck tren moi push/PR vao `main`.
 - `.github/workflows/release.yml` - khi push git tag dang `v*.*.*`, build,
   dong goi `dist/` thanh zip, tao GitHub Release dinh kem zip do (tai len
