@@ -3,81 +3,193 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chính sách quyền riêng tư — TNClubManagement Save Form</title>
+  <title data-i18n="title">Chính sách quyền riêng tư — TNClubManagement Save Form</title>
   <style>
     body { font-family: system-ui, -apple-system, sans-serif; max-width: 760px; margin: 40px auto; padding: 0 16px; line-height: 1.6; color: #1f2933; }
-    h1 { font-size: 1.5rem; }
+    h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
     h2 { font-size: 1.15rem; margin-top: 2rem; }
     table { border-collapse: collapse; width: 100%; margin-top: 0.5rem; }
     th, td { border: 1px solid #d1d5db; padding: 8px 10px; text-align: left; font-size: 0.95rem; }
     th { background: #f3f4f6; }
     code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; }
+    .lang-switch { display: flex; justify-content: flex-end; gap: 6px; margin-bottom: 8px; }
+    .lang-switch button {
+      cursor: pointer; border: 1px solid #d1d5db; background: #fff; color: #374151;
+      padding: 6px 14px; border-radius: 999px; font-size: 0.85rem; font-weight: 500;
+    }
+    .lang-switch button.active { background: #2563eb; border-color: #2563eb; color: #fff; }
+    .updated { color: #6b7280; font-size: 0.9rem; }
   </style>
 </head>
 <body>
-  <h1>Chính sách quyền riêng tư — TNClubManagement Save Form</h1>
-  <p><em>Cập nhật lần cuối: 2026-09-19</em></p>
+  <div class="lang-switch">
+    <button type="button" data-lang-btn="vi">Tiếng Việt</button>
+    <button type="button" data-lang-btn="en">English</button>
+  </div>
 
-  <h2>Tóm tắt</h2>
-  <p>
-    TNClubManagement Save Form (&quot;Extension&quot;) là tiện ích Chrome giúp tự động
-    lưu và khôi phục dữ liệu bạn đã nhập vào các form trên những trang web mà
-    <strong>chính bạn</strong> cho phép. Extension <strong>không thu thập,
-    không gửi, không bán</strong> bất kỳ dữ liệu nào của bạn cho bên thứ ba, và
-    <strong>không có máy chủ (server) riêng nào</strong>.
-  </p>
+  <div data-lang-content="vi">
+    <h1>Chính sách quyền riêng tư — TNClubManagement Save Form</h1>
+    <p class="updated"><em>Cập nhật lần cuối: 2026-09-19</em></p>
 
-  <h2>Dữ liệu nào được xử lý?</h2>
-  <p>
-    Extension đọc dữ liệu bạn nhập trong các trường form (input, textarea,
-    select, các nút lựa chọn dạng &quot;chip&quot;...) trên các trang web nằm
-    trong danh sách domain do bạn tự thêm ở trang Options.
-  </p>
+    <h2>Tóm tắt</h2>
+    <p>
+      TNClubManagement Save Form (&quot;Extension&quot;) là tiện ích Chrome giúp tự động
+      lưu và khôi phục dữ liệu bạn đã nhập vào các form trên những trang web mà
+      <strong>chính bạn</strong> cho phép. Extension <strong>không thu thập,
+      không gửi, không bán</strong> bất kỳ dữ liệu nào của bạn cho bên thứ ba, và
+      <strong>không có máy chủ (server) riêng nào</strong>.
+    </p>
 
-  <h2>Dữ liệu được lưu ở đâu?</h2>
-  <p>
-    Toàn bộ dữ liệu (bản nháp tự động lưu, các &quot;phiên bản có tên&quot; do
-    bạn chủ động lưu, danh sách domain được phép, cấu hình thời gian giữ bản
-    nháp) chỉ được lưu <strong>cục bộ trên trình duyệt của bạn</strong> thông
-    qua API <code>chrome.storage.local</code> của Chrome. Dữ liệu:
-  </p>
-  <ul>
-    <li>Không được đồng bộ lên tài khoản Google (không dùng <code>chrome.storage.sync</code>).</li>
-    <li>Không được gửi tới bất kỳ máy chủ, API, hay dịch vụ phân tích (analytics) nào của nhà phát triển hay bên thứ ba.</li>
-    <li>Chỉ có thể truy cập được bởi chính Extension, trên chính trình duyệt bạn đã cài đặt.</li>
-  </ul>
+    <h2>Dữ liệu nào được xử lý?</h2>
+    <p>
+      Extension đọc dữ liệu bạn nhập trong các trường form (input, textarea,
+      select, các nút lựa chọn dạng &quot;chip&quot;...) trên các trang web nằm
+      trong danh sách domain do bạn tự thêm ở trang Options.
+    </p>
 
-  <h2>Quyền truy cập website (host permissions)</h2>
-  <p>
-    Extension <strong>không</strong> yêu cầu quyền truy cập bất kỳ trang web
-    nào theo mặc định. Quyền truy cập một domain cụ thể chỉ được xin (qua hộp
-    thoại xin quyền chuẩn của Chrome — <code>chrome.permissions.request</code>)
-    khi <strong>bạn chủ động thêm domain đó</strong> vào danh sách cho phép ở
-    trang Options. Bạn có thể thu hồi quyền này bất cứ lúc nào bằng cách xoá
-    domain khỏi danh sách.
-  </p>
+    <h2>Dữ liệu được lưu ở đâu?</h2>
+    <p>
+      Toàn bộ dữ liệu (bản nháp tự động lưu, các &quot;phiên bản có tên&quot; do
+      bạn chủ động lưu, danh sách domain được phép, cấu hình thời gian giữ bản
+      nháp) chỉ được lưu <strong>cục bộ trên trình duyệt của bạn</strong> thông
+      qua API <code>chrome.storage.local</code> của Chrome. Dữ liệu:
+    </p>
+    <ul>
+      <li>Không được đồng bộ lên tài khoản Google (không dùng <code>chrome.storage.sync</code>).</li>
+      <li>Không được gửi tới bất kỳ máy chủ, API, hay dịch vụ phân tích (analytics) nào của nhà phát triển hay bên thứ ba.</li>
+      <li>Chỉ có thể truy cập được bởi chính Extension, trên chính trình duyệt bạn đã cài đặt.</li>
+    </ul>
 
-  <h2>Các quyền khác mà Extension sử dụng</h2>
-  <table>
-    <tr><th>Quyền</th><th>Mục đích</th></tr>
-    <tr><td><code>storage</code></td><td>Lưu bản nháp, phiên bản đã lưu, danh sách domain và cài đặt — toàn bộ ở local.</td></tr>
-    <tr><td><code>scripting</code></td><td>Chèn content script vào đúng các domain bạn đã cho phép để đọc/điền dữ liệu form.</td></tr>
-    <tr><td><code>activeTab</code></td><td>Cho phép trang Side Panel thao tác với tab hiện tại khi bạn chủ động mở nó.</td></tr>
-    <tr><td><code>alarms</code></td><td>Lên lịch dọn định kỳ các bản nháp tự động lưu đã quá hạn giữ.</td></tr>
-    <tr><td><code>sidePanel</code></td><td>Hiển thị giao diện quản lý (xem/lưu/khôi phục/xoá) trong Side Panel của Chrome.</td></tr>
-  </table>
+    <h2>Quyền truy cập website (host permissions)</h2>
+    <p>
+      Extension <strong>không</strong> yêu cầu quyền truy cập bất kỳ trang web
+      nào theo mặc định. Quyền truy cập một domain cụ thể chỉ được xin (qua hộp
+      thoại xin quyền chuẩn của Chrome — <code>chrome.permissions.request</code>)
+      khi <strong>bạn chủ động thêm domain đó</strong> vào danh sách cho phép ở
+      trang Options. Bạn có thể thu hồi quyền này bất cứ lúc nào bằng cách xoá
+      domain khỏi danh sách.
+    </p>
 
-  <h2>Xoá dữ liệu</h2>
-  <p>
-    Bạn có thể xoá dữ liệu đã lưu bất kỳ lúc nào từ giao diện Side Panel (xoá
-    từng bản nháp/phiên bản), hoặc gỡ cài đặt Extension để xoá toàn bộ dữ liệu
-    mà <code>chrome.storage.local</code> đang giữ.
-  </p>
+    <h2>Các quyền khác mà Extension sử dụng</h2>
+    <table>
+      <tr><th>Quyền</th><th>Mục đích</th></tr>
+      <tr><td><code>storage</code></td><td>Lưu bản nháp, phiên bản đã lưu, danh sách domain và cài đặt — toàn bộ ở local.</td></tr>
+      <tr><td><code>scripting</code></td><td>Chèn content script vào đúng các domain bạn đã cho phép để đọc/điền dữ liệu form.</td></tr>
+      <tr><td><code>activeTab</code></td><td>Cho phép trang Side Panel thao tác với tab hiện tại khi bạn chủ động mở nó.</td></tr>
+      <tr><td><code>alarms</code></td><td>Lên lịch dọn định kỳ các bản nháp tự động lưu đã quá hạn giữ.</td></tr>
+      <tr><td><code>sidePanel</code></td><td>Hiển thị giao diện quản lý (xem/lưu/khôi phục/xoá) trong Side Panel của Chrome.</td></tr>
+    </table>
 
-  <h2>Liên hệ</h2>
-  <p>
-    Nếu có câu hỏi về chính sách quyền riêng tư này, vui lòng liên hệ:
-    <code>&lt;điền email hỗ trợ của bạn tại đây&gt;</code>.
-  </p>
+    <h2>Xoá dữ liệu</h2>
+    <p>
+      Bạn có thể xoá dữ liệu đã lưu bất kỳ lúc nào từ giao diện Side Panel (xoá
+      từng bản nháp/phiên bản), hoặc gỡ cài đặt Extension để xoá toàn bộ dữ liệu
+      mà <code>chrome.storage.local</code> đang giữ.
+    </p>
+
+    <h2>Liên hệ</h2>
+    <p>
+      Nếu có câu hỏi về chính sách quyền riêng tư này, vui lòng liên hệ:
+      <code>&lt;điền email hỗ trợ của bạn tại đây&gt;</code>.
+    </p>
+  </div>
+
+  <div data-lang-content="en" hidden>
+    <h1>Privacy Policy — TNClubManagement Save Form</h1>
+    <p class="updated"><em>Last updated: 2026-09-19</em></p>
+
+    <h2>Summary</h2>
+    <p>
+      TNClubManagement Save Form (the &quot;Extension&quot;) is a Chrome extension that
+      automatically saves and restores the data you type into web forms on
+      sites <strong>you</strong> explicitly allow. The Extension
+      <strong>does not collect, transmit, or sell</strong> any of your data to
+      third parties, and it <strong>has no server of its own</strong>.
+    </p>
+
+    <h2>What data is processed?</h2>
+    <p>
+      The Extension reads the data you type into form fields (input, textarea,
+      select, and custom &quot;chip&quot;-style choice buttons...) on websites
+      whose domain you have explicitly added to the allowed list on the
+      Options page.
+    </p>
+
+    <h2>Where is data stored?</h2>
+    <p>
+      All data (automatic drafts, named versions you save yourself, the list
+      of allowed domains, and retention settings) is stored
+      <strong>locally in your own browser</strong> via Chrome's
+      <code>chrome.storage.local</code> API. This data is:
+    </p>
+    <ul>
+      <li>Never synced to your Google account (<code>chrome.storage.sync</code> is not used).</li>
+      <li>Never sent to any server, API, or analytics service, whether operated by the developer or a third party.</li>
+      <li>Only accessible by the Extension itself, on the browser where you installed it.</li>
+    </ul>
+
+    <h2>Website access (host permissions)</h2>
+    <p>
+      The Extension requests <strong>no</strong> website access by default.
+      Access to a specific domain is only requested (via Chrome's standard
+      permission dialog — <code>chrome.permissions.request</code>) when
+      <strong>you explicitly add that domain</strong> to the allowed list on
+      the Options page. You can revoke this permission at any time by
+      removing the domain from the list.
+    </p>
+
+    <h2>Other permissions used by the Extension</h2>
+    <table>
+      <tr><th>Permission</th><th>Purpose</th></tr>
+      <tr><td><code>storage</code></td><td>Store drafts, saved versions, the domain list, and settings — all locally.</td></tr>
+      <tr><td><code>scripting</code></td><td>Inject the content script only into domains you have allowed, to read/fill form data.</td></tr>
+      <tr><td><code>activeTab</code></td><td>Lets the Side Panel interact with the current tab when you actively open it.</td></tr>
+      <tr><td><code>alarms</code></td><td>Schedules periodic cleanup of automatic drafts past their retention period.</td></tr>
+      <tr><td><code>sidePanel</code></td><td>Displays the management UI (view/save/restore/delete) in Chrome's Side Panel.</td></tr>
+    </table>
+
+    <h2>Deleting your data</h2>
+    <p>
+      You can delete saved data at any time from the Side Panel (removing
+      individual drafts/versions), or uninstall the Extension to remove all
+      data held in <code>chrome.storage.local</code>.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      If you have questions about this privacy policy, please contact:
+      <code>&lt;fill in your support email here&gt;</code>.
+    </p>
+  </div>
+
+  <script>
+    (function () {
+      var STORAGE_KEY = 'saveform-privacy-lang';
+      var buttons = document.querySelectorAll('[data-lang-btn]');
+      var contents = document.querySelectorAll('[data-lang-content]');
+
+      function applyLang(lang) {
+        contents.forEach(function (el) {
+          el.hidden = el.getAttribute('data-lang-content') !== lang;
+        });
+        buttons.forEach(function (btn) {
+          btn.classList.toggle('active', btn.getAttribute('data-lang-btn') === lang);
+        });
+        document.documentElement.lang = lang;
+        try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          applyLang(btn.getAttribute('data-lang-btn'));
+        });
+      });
+
+      var saved = null;
+      try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+      var browserLang = (navigator.language || 'vi').toLowerCase().indexOf('en') === 0 ? 'en' : 'vi';
+      applyLang(saved === 'en' || saved === 'vi' ? saved : browserLang);
+    })();
+  </script>
 </body>
 </html>

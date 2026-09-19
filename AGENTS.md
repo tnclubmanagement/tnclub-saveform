@@ -40,7 +40,17 @@ domain nguoi dung cho phep. Stack: TypeScript + Vite + `@crxjs/vite-plugin`.
 - `src/options/` - quan ly danh sach domain duoc phep (xin quyen qua
   `chrome.permissions.request`) va thoi gian giu ban nhap tu dong (khong anh
   huong "phien ban co ten", vi do la nguoi dung chu dong luu).
-- `src/shared/` - types va wrapper cho `chrome.storage.local` dung chung.
+- `src/shared/` - types va wrapper cho `chrome.storage.local` dung chung
+  (`host.ts` co `hostToMatchPattern` dung chung cho ca Options va service worker).
+- `docs/privacy.html` - trang chinh sach quyen rieng tu cong khai (song ngu
+  VI/EN, toggle o goc phai tren), dung lam Privacy Policy URL khi submit len
+  Chrome Web Store. Bat GitHub Pages (Settings > Pages > Deploy from branch >
+  `main` > thu muc `/docs`) de co URL cong khai, khong can workflow rieng.
+- `.github/workflows/ci.yml` - build + typecheck tren moi push/PR vao `main`.
+- `.github/workflows/release.yml` - khi push git tag dang `v*.*.*`, build,
+  dong goi `dist/` thanh zip, tao GitHub Release dinh kem zip do (tai len
+  Chrome Web Store thu cong; chua tu dong publish vi can OAuth credentials
+  rieng cho Chrome Web Store API).
 
 Content script duoc dang ky **dong** (khong khai bao tinh trong manifest) vi
 danh sach domain do nguoi dung cau hinh runtime. De crxjs bundle dung, import

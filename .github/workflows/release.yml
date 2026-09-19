@@ -1,0 +1,44 @@
+name: Release
+
+# Chay khi push mot git tag dang v*.*.* (vd: v1.0.1). Build extension, dong
+# goi dist/ thanh file .zip, va tao GitHub Release dinh kem file zip do -
+# ban co the tai file zip nay len Chrome Web Store thu cong (Chrome Web Store
+# API can OAuth credentials rieng, chua cau hinh o day - xem ghi chu ben duoi
+# neu muon tu dong hoa buoc publish len store).
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run build
+
+      - name: Package extension as zip
+        run: |
+          cd dist
+          zip -r "../tnclubmanagement-save-form-${{ github.ref_name }}.zip" .
+          cd ..
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ github.ref_name }}" \
+            "tnclubmanagement-save-form-${{ github.ref_name }}.zip" \
+            --title "${{ github.ref_name }}" \
+            --generate-notes
