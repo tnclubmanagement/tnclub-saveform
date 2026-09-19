@@ -47,10 +47,13 @@ domain nguoi dung cho phep. Stack: TypeScript + Vite + `@crxjs/vite-plugin`.
   Chrome Web Store. Bat GitHub Pages (Settings > Pages > Deploy from branch >
   `main` > thu muc `/docs`) de co URL cong khai, khong can workflow rieng.
 - `docs/store-assets/` - hinh anh dung khi submit len Chrome Web Store:
-  `promo-tile-440x280.png` (Small promo tile, co file `.svg` nguon di kem de
-  chinh sua). Icon Store (128x128) dung lai `public/icons/icon128.png`. Con
-  thieu: Screenshot (1280x800 hoac 640x400) - phai la anh chup THAT extension
-  dang chay, khong the tu tao, ban tu chup roi bo sung khi submit.
+  - `promo-tile-440x280.png` (+ `.svg` nguon) - Small promo tile.
+  - `screenshot-1-1280x800.png` - screenshot ghep tu Side Panel + Options,
+    render bang headless Chrome (puppeteer-core) voi `chrome.storage`/`chrome.tabs`
+    duoc gia lap du lieu mau (khong phai session that cua nguoi dung nao).
+    Neu can chup them anh that voi du lieu thuc te, phai tu lam thu cong vi
+    can chay dung trong context extension that.
+  - Icon Store (128x128) dung lai `public/icons/icon128.png`.
 - `.github/workflows/ci.yml` - build + typecheck tren moi push/PR vao `main`.
 - `.github/workflows/release.yml` - khi push git tag dang `v*.*.*`, build,
   dong goi `dist/` thanh zip, tao GitHub Release dinh kem zip do (tai len
